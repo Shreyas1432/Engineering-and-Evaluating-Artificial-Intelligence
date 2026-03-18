@@ -9,4 +9,6 @@ text_column='email_text'
 #vectorization setting 
 TFIDF_MAX_FEATURES=5000
 TFIDF_NGRAM_RANGE=(1,2)
-#parameters
+#parameters of linear svm
+SVM_C=1.0
+SVM_MAX_ITER=5000
