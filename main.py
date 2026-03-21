@@ -47,4 +47,4 @@ if __name__ == '__main__':
     chained_multi_output(X, df)
     print("\nRunning Design Choice 2...")
     hierarchical_modelling(X, df)
-    print("\nDone.")
+    print("\nAll classifications complete.")
