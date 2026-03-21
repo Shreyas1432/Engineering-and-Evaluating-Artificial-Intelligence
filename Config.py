@@ -1,3 +1,5 @@
+import os
+
 class Config:
     TICKET_SUMMARY = 'Ticket Summary'
     INTERACTION_CONTENT = 'Interaction content'
