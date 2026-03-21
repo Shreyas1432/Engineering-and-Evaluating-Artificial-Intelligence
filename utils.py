@@ -11,3 +11,6 @@ def remove_low_frequency_classes(df, column, min_count=None):
 
 def remove_nan_rows(df, column):
     return df.dropna(subset=[column])
+
+def get_class_distribution(df, column):
+    return df[column].value_counts()
