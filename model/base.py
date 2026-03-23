@@ -1,3 +1,4 @@
+from typing import Any, Dict
 from abc import ABC, abstractmethod
 import pandas as pd
 import numpy as np
@@ -23,8 +24,9 @@ class BaseModel(ABC):
         pass
 
     def build(self, values=dict[str, any]={}):
-        values = values if isinstance(values, dict) else {}
-        if hasattr(self, 'defaults'):
-            self.__dict__.update(self.defaults)
-        self.__dict__.update(values)
-        return self
+        if not isinstance(values, dict):
+            values = {}
+        for key,values in getattr(self, 'defaults', {}).items():
+            setattr(self,key,values)
+        for key, value in values.items():
+            setattr(self, key, value)
