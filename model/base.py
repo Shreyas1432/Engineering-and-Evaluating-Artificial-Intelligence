@@ -23,7 +23,7 @@ class BaseModel(ABC):
     def data_transform(self):
         pass
 
-    def build(self, values=dict[str, any]={}):
+    def build (self, values: dict[str, Any]={}):
         if not isinstance(values, dict):
             values = {}
         for key,values in getattr(self, 'defaults', {}).items():
