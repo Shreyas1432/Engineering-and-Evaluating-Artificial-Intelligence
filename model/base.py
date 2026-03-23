@@ -11,18 +11,18 @@ class BaseModel(ABC):
         pass
 
     @abstractmethod
-    def predict(self, X_test):
-        pass
+    def predict(self, X_test)->np.ndarray:
+        raise NotImplementedError
 
     @abstractmethod
-    def print_results(self, data):
-        pass
+    def print_results(self, y_test, Y_pred)->None:
+        raise NotImplementedError
 
     @abstractmethod
     def data_transform(self):
         pass
 
-    def build(self, values={}):
+    def build(self, values=dict[str, any]={}):
         values = values if isinstance(values, dict) else {}
         if hasattr(self, 'defaults'):
             self.__dict__.update(self.defaults)

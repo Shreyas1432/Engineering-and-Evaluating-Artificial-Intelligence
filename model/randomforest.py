@@ -1,3 +1,4 @@
+from typing import Any
 import numpy as np
 import pandas as pd
 from model.base import BaseModel
@@ -23,16 +24,12 @@ class RandomForest(BaseModel):
     def train(self, data):
         self.mdl = self.mdl.fit(data.X_train, data.y_train)
 
-    def predict(self, X_test):
-        predictions = self.mdl.predict(X_test)
-        self.predictions = predictions
-        return predictions
+    def predict(self, X_test)-> np.ndarray:
+        return self.mdl.predict(X_test)
 
-    def print_results(self, data):
-        print(f"\n{'='*60}")
+    def print_results(self, y_test,Y_pred):
         print(f"Classification Report for: {self.model_name}")
-        print(f"{'='*60}")
-        print(classification_report(data.y_test, self.predictions, zero_division=0))
+        print(classification_report(y_test, Y_pred, zero_division=0))
 
     def data_transform(self):
         pass
