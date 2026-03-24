@@ -10,3 +10,5 @@ class Config:
     SEED = 0
     DATA_FILES = ['data/AppGallery.csv', 'data/Purchasing.csv']
     CHAIN_SEPARATOR = ' + '
+    TEST_SIZE = 0.2
+    N_ESTIMATORS = 1000
