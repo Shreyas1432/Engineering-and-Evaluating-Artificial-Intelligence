@@ -42,7 +42,7 @@ if __name__ == '__main__':
     print(f"Embedding shape: {X.shape}")
     print("\nBaseline: Type 2 only")
     data = get_data_object(X, df, target_col=Config.CLASS_COL)
-    perform_modelling(data, df, 'RandomForest - Type 2 (Baseline)')
+    perform_modelling(data, df, 'Type 2 (Baseline)')
     print("\nRunning Design Choice 1")
     chained_multi_output(X, df)
     print("\nRunning Design Choice 2")
