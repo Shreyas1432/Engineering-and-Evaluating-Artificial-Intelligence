@@ -8,11 +8,11 @@ import pandas as pd
 def model_predict(data, df, name):
     rf = RandomForest(model_name=name, embeddings=data.get_embeddings(), y=data.get_type())
     rf.train(data)
-    rf.predict(data.get_X_test())
-    model_evaluate(rf, data)
+    y_pred=rf.predict(data.get_X_test())
+    model_evaluate(rf, data.y_test, y_pred)
 
-def model_evaluate(model, data):
-    model.print_results(data)
+def model_evaluate(model, y_test, y_pred):
+    model.print_results(y_test,y_pred)
 
 def chained_multi_output(X, df):
     print("\n" + "=" * 70)
