@@ -36,3 +36,9 @@ def noise_remover(df):
 
 def translate_to_en(texts):
     return texts
+
+def get_data_summary(df):
+    print(f"Total records: {len(df)}")
+    for col in ['Type 2', 'Type 3', 'Type 4']:
+        if col in df.columns:
+            print(f"{col}: {df[col].nunique()} classes")
